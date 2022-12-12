@@ -4,10 +4,10 @@ public class GearBox {
      * -1 - rear
      * 1-6 -
      */
-    public int gear = 0;
+    private int gear = 0;
 
-    public int maxGear = 6;
-    public int minGear = 1;
+    private int maxGear = 6;
+    private int minGear = 1;
 
 
     public void shiftUp () {
@@ -18,5 +18,15 @@ public class GearBox {
         gear = gear > minGear ? gear - 1 : gear;
     }
 
+    public void switchRear() {
+        gear = (gear > 1) ? gear : -1;
+    }
 
+    public void switchNeutral() {
+        gear = 0;
+    }
+
+    public int getCurrentGear() {
+        return gear;
+    }
 }
